@@ -17,12 +17,20 @@
     <h1 class="headline">
       I build reliable full-stack software systems with a strong backend foundation.
     </h1>
-    <a href="#contact" class="cta-button" on:click={(e) => scrollToSection(e, '#contact')}>
-      <span>Let's Work Together</span>
-      <svg class="cta-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
+    <div class="cta-buttons">
+      <a href="#contact" class="cta-button" on:click={(e) => scrollToSection(e, '#contact')}>
+        <span>Let's Work Together</span>
+        <svg class="cta-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="/MOHAMMED_NAFIA_CV.pdf" download class="cta-button cv-button">
+        <span>Download CV</span>
+        <svg class="cta-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 2V12M8 12L4 8M8 12L12 8M2 14H14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
   </div>
 
   <!-- Portrait -->
@@ -87,6 +95,13 @@
     transform: translateY(40px);
     animation: textReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
   }
+
+  .cta-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
 
   .cta-button {
     display: inline-flex;
@@ -216,18 +231,22 @@
   @media (max-width: 1024px) {
     .hero {
       grid-template-columns: 1fr;
-      grid-template-rows: auto 1fr;
+      grid-template-rows: 1fr;
+      min-height: 100vh;
     }
 
     .hero-content {
-      padding: 140px 32px 40px;
+      padding: 32px;
+      padding-bottom: 180px;
       max-width: 100%;
       text-align: center;
       align-items: center;
+      justify-content: flex-end;
     }
 
     .headline {
       font-size: 28px;
+      margin-bottom: 24px;
     }
 
     .hero-portrait {
@@ -254,13 +273,22 @@
 
   @media (max-width: 640px) {
 
-
     .headline {
-      font-size: 24px;
+      font-size: 22px;
+      margin-bottom: 20px;
     }
 
     .hero-content {
-      padding: 120px 24px 40px;
+      padding: 24px;
+      padding-bottom: 160px;
+    }
+
+    .name-display {
+      bottom: 30px;
+    }
+
+    .name-text {
+      font-size: clamp(50px, 12vw, 120px);
     }
   }
 
